@@ -50,7 +50,10 @@ public class WordLadder {
     public static int ladderLength(String start, String end, Set<String> dict)
     {
         // write your code here
-        if (start == null || end == null || start.length() == 0 || end.length() == 0 || start.length() != end.length())
+        if (start == null || end == null
+                || start.length() == 0
+                || end.length() == 0
+                || start.length() != end.length())
         {
             return 0;
         }
