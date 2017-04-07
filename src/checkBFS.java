@@ -1,3 +1,4 @@
+import static java.lang.Integer.MAX_VALUE;
 import static java.lang.Integer.MIN_VALUE;
 
 /**
@@ -15,20 +16,16 @@ public class TreeNode {
 public class checkBFS {
     public boolean checkBST(TreeNode root) {
       int min = MIN_VALUE;
-      return method(root, min);
+      int max = MAX_VALUE;
+      return method(root, min, max);
 
     }
-    public boolean method(TreeNode root, int last){
+    public boolean method(TreeNode root, int min, int max){
         if(root == null)
             return true;
-        if(!method(root.left, last))
-            return false;
-        if(root.val < last)
-            return false;
-        last = root.val;
-        if(!method(root.right, last))
-            return false;
-        return true;
+       if(root.val < min || root.val > max)
+           return false;
+        return method(root.left, min, root.val ) && method(root.right, root.val, max);
 
     }
 }
