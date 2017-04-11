@@ -9,7 +9,6 @@ public class LCA {
                a /= 2;
            else
                b /= 2;
-
        }
        return a;
     }
