@@ -1,23 +1,23 @@
-import java.util.HashMap;
+import java.util.ArrayList;
+
 
 public class Solution {
-    public int lengthOfLongestSubstring(String s) {
-        if (s.length()==0) return 0;
-        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
-        int max = 0;
-        for (int i = 0, j = 0; i < s.length(); ++i){
-           if(map.containsKey(s.charAt(i))){
-               j = Math.max(j, map.get(s.charAt(i)) + 1);
-           }
-
-           map.put(s.charAt(i), i);
-           max = Math.max(i - j + 1, max);
+    public static int minNumberInRotateArray(int [] array) {
+        int low = 0 ; int high = array.length - 1;
+        while(low < high){
+            int mid = low + (high - low) / 2;
+            if(array[mid] > array[high]){
+                low = mid + 1;
+            }else if(array[mid] == array[high]){
+                high = high - 1;
+            }else{
+                high = mid;
+            }
         }
-        return max;
-
-
-
-
-
+        return array[low];
+    }
+    public static void main(String[] argv){
+        int[] a = {4,5,1,2, 3};
+        System.out.println(minNumberInRotateArray(a));
     }
 }
