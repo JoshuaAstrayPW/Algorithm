@@ -67,7 +67,6 @@ public class LinkedListQuickSort {
              Node temp = new Node(a[i], null);
              c.next = temp;
              c = temp;
-
         }
         Node p = head;
         while (p.next != null) {
