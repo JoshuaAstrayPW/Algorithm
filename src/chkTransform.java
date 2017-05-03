@@ -10,7 +10,7 @@ import java.util.HashMap;
  返回：true
  */
 
-public class Transform {
+public class chkTransform {
         public boolean chkTransform(String A, int lena, String B, int lenb) {
             HashMap<Character,Integer> mapA = new HashMap<>();
             HashMap<Character,Integer> mapB = new HashMap<>();
