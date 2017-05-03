@@ -11,7 +11,7 @@ import java.util.HashMap;
  */
 
 public class chkTransform {
-        public boolean chkTransform(String A, int lena, String B, int lenb) {
+        public boolean Transform(String A, int lena, String B, int lenb) {
             HashMap<Character,Integer> mapA = new HashMap<>();
             HashMap<Character,Integer> mapB = new HashMap<>();
             for(int i = 0; i < lena; i++){
