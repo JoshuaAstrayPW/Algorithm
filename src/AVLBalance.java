@@ -9,11 +9,11 @@ public class AVLBalance {
        getDeoth(root);
        return isBalanced;
     }
-    public int getDeoth(TreeNode root){
+    public int getDepth(TreeNode root){
         if(root == null)
             return 0;
-        int left = getDeoth(root.left);
-        int right = getDeoth(root.right);
+        int left = getDepth(root.left);
+        int right = getDepth(root.right);
         if(Math.abs(left - right) > 1)
             isBalanced = false;
         return right > left ? right+1 : left+1;
